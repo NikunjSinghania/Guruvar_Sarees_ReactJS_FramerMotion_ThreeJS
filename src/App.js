@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Canvas } from "@react-three/fiber";
+import { Experience } from "./Components/Experience";
+import { motion } from 'framer-motion'
+import { useState } from "react";
+export default function App() {
 
-function App() {
+  const [ch, setCh] = useState(true)
+
+  setTimeout(() => setCh(false), 5000)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {
+      ch && <section>
+      <motion.div 
+      initial={{
+        y : '-100vh'
+      }}
+      animate={{
+        y : '0'
+      }}
+      transition={{
+        duration : 2
+      }}
+      exit = {{
+        y : '-100vh'
+      }}
+      ></motion.div>
+      <motion.div 
+      initial={{
+        y : '100vh'
+      }}
+      animate={{
+        y : '0'
+      }}
+
+      transition={{
+        duration : 2
+      }}
+      exit = {{
+        y : '100vh'
+      }}
+      ></motion.div>
+    </section>
+    }
+    
+    </>
+      
+    
+    // <Canvas shadows camera={{ position: [0, 0, 8], fov: 42 }}>
+    //   {/* <color attach="background" args={["rgba(0,0,0,0)"]} /> */}
+    //   <Experience />
+    // </Canvas>
   );
 }
-
-export default App;
