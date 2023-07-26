@@ -1,27 +1,130 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-canvas {
-  height: 100vh;
-  width : 100vw;
+
+:root {
+  --root-color  : #7d7d7d;
+}
+body {
+  background-color: rgb(1, 25, 23);
+}
+#contactsCollection {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
-section { 
+#contactsCollection a {
+  height: 20px;
+  width: 20px;
+  margin: 5px 20px;
+}
+
+#contactsCollection a svg path{
+  fill: var(--root-color);
+
+}
+
+#mouse {
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+@font-face {
+  font-family: harmony;
+  src: url('./HARMONY\ Personal\ use.otf');
+}
+
+#home {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-section div:nth-of-type(1) {
-  height: 100vh;
-  width: 50vw;
-  background-color: #DB8468;
+#home nav {
+  position: absolute;
+  width: fit-content;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  font-family: harmony;
+  top:0;
+  left: 0;
 }
 
-section div {
-  height: 100vh;
-  width: 50vw;
-  background-color: black;
+#home #logo {
+  height : 15vw;
+}
+
+#home nav a {
+  text-decoration: none;
+  color: #7d7d7d;
+  margin: 0 20px;
+}
+
+#home nav #links {
+  display: flex;
+}
+
+#home #container {
+  position: relative;
+  height : 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-items: center; */
+}
+
+#home #mainContainer {
+  overflow-x: visible;
+  overflow-y: clip;
+  margin-top: 50px;
+  position: relative;
+}
+
+#home #textContainer {
+  font-size: 10vw;
+  color: rgba(218, 218, 218, 0);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  overflow: hidden;
+}
+
+#home #textContainer h1 {
+  -webkit-text-stroke:white;
+  -webkit-text-stroke-width: 1px;
+}
+
+#home .main {
+  height: 60vh;
+}
+#home .mainup {
+  position: absolute;
+  height: 60vh;
+  left : 0;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.5vw;
+  background-color: #7d7d7d61;
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 768px) {
+  #home #logo {
+    height : 15vw;
+  }
 }

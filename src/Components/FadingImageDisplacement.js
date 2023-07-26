@@ -105,7 +105,7 @@ export const FadingImageDisplacement = (props) => {
       ref={m}
     >
       <roundedPlaneGeometry
-        args={[2.25, 4]} // 9:16 aspect ratio
+        args={[4.25, 8]} // 9:16 aspect ratio
       />
       <imageFadeMaterialDisplacement
         ref={ref}
